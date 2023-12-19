@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingrano</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css"
+    integrity="sha512-8RxmFOVaKQe/xtg6lbscU9DU0IRhURWEuiI0tXevv+lXbAHfkpamD4VKFQRto9WgfOJDwOZ74c/s9Yesv3VvIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100;400;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+
+    .nav-item {
+      position: relative;
+      margin-right: 20px;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: #333;
+      /* Adjust the text color as needed */
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Underline Animation */
+    .nav-item a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      /* Adjust the thickness of the underline */
+      bottom: 0;
+      left: 0;
+      background-color: hsl(0, 0%, 100%);
+      /* Adjust the color of the underline */
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease-out;
+    }
+
+    .nav-item a:hover::before {
+      transform: scaleX(1);
+      transform-origin: center;
+    }
+
+    button {
+      background-color: transparent;
+      color: #9c1006;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: 2px solid #9c1006;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: white;
+      background-color: #9c1006;
+      text-transform: uppercase;
+    }
+
+    .sec3 {
+      background-color: white;
+    }
+
+    .sec3 h1 {
+      padding-top: 45px;
+      padding-bottom: 45px;
+      font-family: 'Archivo', sans-serif;
+      text-transform: uppercase;
+      font-size: 100px;
+      font-weight: 900;
+      text-align: center;
+      background: url('images/text_back.png') center/cover no-repeat;
+      color: transparent;
+      -webkit-background-clip: text;
+      letter-spacing: 5px;
+      animation: moveBackground 20s linear infinite;
+    }
+
+    .sec4 .col-lg-5 .header h3:hover {
+      color: #9c1006;
+    }
+
+    .para2 p:hover {
+      color: #9c1006;
+    }
+
+    .span {
+      color: #9c1006;
+    }
+
+    .sec4a {
+      padding-top: 50px;
+      padding-left: 130px;
+    }
+
+    .photo-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 10px;
+    }
+
+    .photo {
+      width: calc(25% - 3px);
+      margin-bottom: 0px;
+      overflow: hidden;
+    }
+
+    .photo-inner {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+
+    .photo img {
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .photo-container .photo p {
+      font-family: 'Archivo', sans-serif;
+      color: #9c1006;
+      font-weight: 900;
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    .photo-inner:hover img {
+      transform: scale(1.09);
+    }
+
+    .sec6 {
+      display: flex;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      text-align: center;
+      padding-left: 500px;
+    }
+
+    .sec6 h3:hover {
+      color: #9c1006;
+    }
+
+    .worldmap {
+      width: 90%;
+      padding-left: 200px;
+    }
+
+    .certifications .heading h3 {
+      font-size: 40px;
+    }
+
+    .certifications .heading h3:hover {
+      color: #9c1006;
+    }
+
+    .certifications .para4 p {
+      padding-left: 170px;
+      padding-right: 170px;
+    }
+
+    .logo-slider-container {
+      overflow: hidden;
+      margin-left: 180px;
+      margin-right: 180px;
+      margin-bottom: 80px;
+    }
+
+    .logo-slider {
+      display: flex;
+      animation: slide 20s linear infinite;
+      /* Adjust the duration as needed */
+    }
+
+    .logo-slider img {
+      width: auto;
+      /* Adjust the width of your logos */
+      height: auto;
+      margin-right: 20px;
+      /* Adjust the space between logos */
+    }
+
+    .scrolling-section {
+      position: relative;
+      height: 150px;
+      /* Adjust the height as needed */
+      overflow: hidden;
+      background-color: transparent;
+      /* Background color for the section */
+    }
+
+    .scrolling-content {
+      display: flex;
+      animation: scrollText 9s linear infinite;
+      /* Adjust the duration as needed */
+    }
+
+    .paragraph {
+      flex: 0 0 100%;
+      /* Each paragraph takes 100% width */
+      font-family: 'Archivo', sans-serif;
+      font-weight: 300;
+      font-size: 20px;
+      color: #9c1006;
+      text-align: center;
+      box-sizing: border-box;
+      padding-right: 140px;
+      /* Remove white-space property to allow the entire paragraph to slide */
+    }
+
+    .footer .email .form button:hover {
+      color: white;
+      background-color: black;
+      text-transform: uppercase;
+    }
+
+    .gototop {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      background: white;
+      color: #9c1006;
+      bottom: 40px;
+      right: 50px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 50px;
+      font-size: 22px;
+      border: 2px solid white;
+      border-radius: 50%;
+    }
+
+    .sec5 button {
+      margin-left: 700px;
+    }
+
+    .footer1 {
+      background-color: #9c1006;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    .footer2 {
+      padding-bottom: 50px;
+    }
+
+    .images2 {
+      padding-left: 100px;
+      padding-top: 160px;
+    }
+
+    .footer2 p {
+      color: #a9a9a9;
+      padding-left: 10px;
+      padding-top: 50px;
+    }
+
+    .email input {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-right: 500px;
+      border: 2px solid white;
+    }
+
+    @keyframes scrollText {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(0);
+      }
+
+      33.33% {
+        transform: translateX(-100%);
+      }
+
+      58.33% {
+        transform: translateX(-100%);
+      }
+
+      66.66% {
+        transform: translateX(-200%);
+      }
+
+      91.66% {
+        transform: translateX(-200%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(30%);
+      }
+
+      100% {
+        transform: translateX(-30%);
+      }
+    }
+
+    @keyframes moveBackground {
+      0% {
+        background-position: 50% 0;
+      }
+
+      50% {
+        background-position: 50% 100%;
+      }
+
+      100% {
+        background-position: 50% 0;
+      }
+    }
+
+    /* Base styles for all sizes */
+
+    /* Styles for screens up to 576px */
+    @media (max-width: 576px) {
+      .carousel-caption {
+        margin-bottom: 50px;
+        margin-right: 10px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .sec3 h1 {
+        font-size: 14vw;
+        letter-spacing: 1vw;
+        padding-top: 15vw;
+        padding-bottom: 15vw;
+      }
+
+      .sec5 button {
+        margin-left: 100px;
+      }
+
+      .certifications .heading h3 {
+        font-size: 20px;
+      }
+
+      .certifications .para4 p {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .worldmap {
+        display: none;
+        /* width: 0.5%;
+        padding-left: 20px; */
+      }
+
+      .footer1 {
+        padding: 0px;
+      }
+
+      .email input {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-right: 6px;
+        border: 2px solid white;
+      }
+
+
+    }
+
+
+    /* Styles for screens between 577px and 768px */
+    @media (min-width: 577px) and (max-width: 768px) {
+      .carousel-caption {
+        margin-bottom: 100px;
+        margin-right: 15px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .sec3 h1 {
+        font-size: 10vw;
+        letter-spacing: 0.5vw;
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+      }
+
+      .sec4 .col-lg-5 .sec4a {
+        justify-content: center;
+      }
+
+      .sec4 .col-lg-5 .sec4b {
+        justify-content: center;
+      }
+
+      .sec6 {
+        font-size: 20px;
+        padding-left: 5px;
+        /* display: flex; */
+        /* padding-top: 40px;
+        padding-bottom: 40px; */
+
+
+      }
+    }
+
+    /* Styles for screens between 769px and 992px */
+    @media (min-width: 769px) and (max-width: 992px) {
+      .carousel-caption {
+        margin-bottom: 120px;
+        margin-right: 18px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .photo {
+        flex-basis: calc(50% - 20px);
+      }
+    }
+
+    /* Styles for screens between 993px and 1200px */
+    @media (min-width: 993px) and (max-width: 1200px) {
+      .carousel-caption {
+        margin-bottom: 140px;
+        margin-right: 20px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+
+    /* Styles for screens larger than 1200px */
+    @media (min-width: 1201px) {
+      .carousel-caption {
+        margin-bottom: 150px;
+        margin-right: 20px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #9c1006">
+      <div class="container-fluid">
+        <img src="images/header_logo.png" height="50px" style="padding-left: 50px; padding-top: 0px;">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px; ">
+            <li class="nav-item" style="padding-left: 690px;">
+              <a class="nav-link active" aria-current="page" href="example.html" style="color: white;">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: white;">ABOUT US</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                style="color: white;">
+                PRODUCTS
+              </a>
+              <ul class="dropdown-menu"
+                style="color: white; margin-top: 12px; background-color: #9c100685; :hover{color: black;}">
+                <li><a class="dropdown-item" href="#"
+                    style="padding-top: 7px; padding-bottom: 7px; padding-left: 10px; padding-right: 10px;"><b>CONVENTIONAL</b></a>
+                </li>
+                <li><a class="dropdown-item" href="#"
+                    style="padding-top: 7px; padding-bottom: 7px; padding-left: 10px; padding-right: 10px;"><b>ORGANIC</b></a>
+                </li>
+                <li><a class="dropdown-item" href="#"
+                    style="padding-top: 7px; padding-bottom: 7px; padding-left: 10px; padding-right: 10px;"><b>FROZEN</b></a>
+                </li>
+                <li><a class="dropdown-item" href="#"
+                    style="padding-top: 7px; padding-bottom: 7px; padding-left: 10px; padding-right: 10px;"><b>READY TO
+                      EAT</b></a></li>
+                <li><a class="dropdown-item" href="#"
+                    style="padding-top: 7px; padding-bottom: 7px; padding-left: 10px; padding-right: 10px;"><b>ORIGINS</b></a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: white;">CONTACT US</a>
+            </li>
+
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div id="carouselExampleCaptions" class="carousel slide" style="padding-top: 0px;">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+          aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="font-family: 'Archivo', sans-serif;">
+          <img src="images/slider1.jpg" class="d-block" height="50%" style="opacity: 50% solid black;">
+          <div class="carousel-caption d-none d-md-block" style="margin-bottom: 470px; margin-right: 550px;">
+            <h1 style="font-size: 65px; font-weight: bolder;"><b>CONVENTIONAL</b></h1><br>
+            <h1 style="font-weight: lighter; font-size: 65px;">PRODUCTS</h1> <br>
+            <p>Discover india's Essence. <br> Quality Spices,Pulses And More.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="carousel-item active" style="font-family: 'Archivo', sans-serif;">
+          <img src="images/slider3.jpg" class="d-block" height="50%" style="opacity: 50% solid black;">
+          <div class="carousel-caption d-none d-md-block" style="margin-bottom: 470px; margin-right: 550px;">
+            <h1 style="font-size: 65px; font-weight: bolder;"><b>ORGANIC</b></h1><br>
+            <h1 style="font-weight: lighter; font-size: 65px;">PRODUCTS</h1> <br>
+            <p>Uearth The Purest Flavors Of India. <br> Certified Organic, Infused with Tradition.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="carousel-item active" style="font-family: 'Archivo', sans-serif;">
+          <img src="images/slider2.jpg" class="d-block" height="50%" style="opacity: 50% solid black;">
+          <div class="carousel-caption d-none d-md-block" style="margin-bottom: 470px; margin-right: 550px;">
+            <h1 style="font-size: 65px; font-weight: bolder;"><b>FROZEN</b></h1><br>
+            <h1 style="font-weight: lighter; font-size: 65px;">FOOD</h1> <br>
+            <p>Authentic Indian Cuisine, Just a Thaw Away. <br> Convenience Meets Tradition.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <div class="carousel-item active" style="font-family: 'Archivo', sans-serif;">
+          <img src="images/slider4.jpg" class="d-block" height="50%" style="opacity: 50% solid black;">
+          <div class="carousel-caption d-none d-md-block" style="margin-bottom: 470px; margin-right: 550px;">
+            <h1 style="font-size: 65px; font-weight: bolder;"><b>READY TO</b></h1><br>
+            <h1 style="font-weight: lighter; font-size: 65px;">EAT</h1> <br>
+            <p>Savour India in an Instant. <br>Delicious, Nutritious, and Ready-to-Eat.</p>
+            <button>Read More</button>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="sec3">
+        <h1>harmony <br> with mother <br> nature</h1>
+      </div>
+      <div class="row sec4" style="background: url(images/SEC4_HOMEBG.png)center/cover no-repeat;">
+        <div class="col-xl-5 sec4a">
+          <div class="header" style="display: flex; padding-bottom: 40px;">
+            <h3
+              style="font-size: 30px; font-weight: 100; font-family: 'Archivo', sans-serif; text-transform: uppercase; ">
+              our <span
+                style="font-size: 30px; font-weight: 900; font-family: 'Archivo', sans-serif; text-transform: uppercase; ">Philosophy</span>
+              <h3>
+          </div>
+          <div class="quote">
+            <h5 style="font-weight: 500; font-size: 20px; padding-bottom: 20px;"><b>
+                “IN” STANDS FOR <span style="color: #9c1006;">INDIAN</span> AND “GRANO” STANDS FOR <span
+                  style="color: #9c1006;">GRAIN</span>.</b>
+            </h5>
+          </div>
+          <div class="para1">
+            <p style="color: #676767; padding-bottom: 20px;"><b>We come with an aim to ingrain ingrano all over the
+                world.</b></p>
+            <p style="color: #676767;">At Ingrano, we take pride in promoting our Indian heritage and are constantly
+              looking forward to bringing India closer to you, wherever you are.</p>
+          </div>
+        </div>
+        <div class="col-xl-2" style="padding-top: 50px;">
+          <img src="images/pulses.png" height="320px" style="padding-top: 40px; padding-right: 40px;">
+        </div>
+        <div class="col-xl-5 sec4b" style="padding-top: 100px; padding-right: 140px; padding-left: 90px;">
+          <p style="color: #676767;">With our extensive range of food products, we aim to promote Indian agriculture and
+            the consumption of healthy food products worldwide. By committing to quality, sustainability, and
+            affordability, we're making the world a smaller—and tastier—place</p>
+          <p style="padding-top: 40px;">
+            <button>Learn More</button>
+          </p>
+        </div>
+      </div>
+      <div class="para2" style="display: flex; justify-content: center; padding-top: 50px; ">
+        <p
+          style="font-size: 40px; font-weight: 900; font-family: 'Archivo', sans-serif; text-transform: uppercase; :hover{color: #9c1006;} ">
+          EVERY BITE IS A JOURNEY <br><span
+            style="font-size: 40px; font-weight: 100; font-family: 'Archivo', sans-serif; text-transform: uppercase; ">BACK
+            HOME</span>.</p>
+      </div>
+      <div class="para3" style="padding-top: 12px; text-align: center; font-size: 20px; font-weight: 100;">
+        <p>From the farm to your table—Ingrano offers an expansive range of <br> organic, conventional, frozen, and
+          ready-to-eat products.</p>
+      </div>
+      <div class="photo-container">
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/pulses_homepage.jpg" alt="Photo 1">
+          </div>
+          <p>PULSES</p>
+        </div>
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/beans_homepage.jpg" alt="Photo 2">
+          </div>
+          <p>BEANS</p>
+        </div>
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/spices_homepage.jpg" alt="Photo 3">
+          </div>
+          <p>SPICES</p>
+        </div>
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/millets_homepage.jpg" alt="Photo 4">
+          </div>
+          <p>MILLETS</p>
+        </div>
+      </div>
+      <div class="photo-container">
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/dry_homepage.jpg" alt="Photo 1">
+          </div>
+          <p>DRY FRUITS</p>
+        </div>
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/flour_homepage.jpg" alt="Photo 2">
+          </div>
+          <p>FLOUR</p>
+        </div>
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/ready_homepage.jpg" alt="Photo 3">
+          </div>
+          <p>READY TO EAT</p>
+        </div>
+        <div class="photo">
+          <div class="photo-inner">
+            <img src="images/frozen_homepage.jpg" alt="Photo 4">
+          </div>
+          <p>FROZEN</p>
+        </div>
+      </div>
+      <div class="sec5">
+        <button>View More</button>
+      </div>
+      <div class="sec6">
+        <h3
+          style="font-size: 40px; font-weight: 900; font-family: 'Archivo', sans-serif; text-transform: uppercase; letter-spacing: 2px;">
+          WE ARE <span
+            style="font-size: 40px; font-weight: 100; font-family: 'Archivo', sans-serif; text-transform: uppercase; padding-left: 10px; letter-spacing: 2px;">ON
+            THE WORLD</span></h3>
+      </div>
+      <div class="worldmap" style="padding-top: 20px; padding-bottom: 30px;">
+        <img src="images/img_world_map(homepage).png">
+      </div>
+      <div class="certifications">
+        <div class="heading" style="text-align: center; padding-top: 50px; padding-bottom: 30px;">
+          <h3
+            style=" font-weight: 100; font-family: 'Archivo', sans-serif; text-transform: uppercase; letter-spacing: 2px;">
+            OUR<span
+              style=" font-weight: 900; font-family: 'Archivo', sans-serif; text-transform: uppercase; padding-left: 10px; letter-spacing: 2px;">CERTIFICATIONS</span>
+          </h3>
+        </div>
+        <div class="para4">
+          <p>Our cutting-edge unit and products have received certification from reputable national and international
+            organizations. Our products are lab-tested and properly certified by the national authorities. Being
+            certified by India Organic, USDA Organic, Jaivik Bharat, and FSSAI has made us a well-known company among
+            exporters of organic foods. We offer a wide variety of certified organic products that are non-GMO and
+            gluten-free.</p>
+        </div>
+      </div>
+      <div class="logo-slider-container">
+        <div class="logo-slider" onmouseenter="pauseSlider()" onmouseleave="resumeSlider()">
+
+          <img src="images/logo1_slider.png" alt="Logo 1">
+          <img src="images/logo2_slider.png" alt="Logo 2">
+          <img src="images/logo3_slider.png" alt="Logo 3">
+          <img src="images/logo4_slider.png" alt="Logo 4">
+          <img src="images/logo5_slider.png" alt="Logo 5">
+          <img src="images/logo6_slider.png" alt="Logo 6">
+          <img src="images/logo7_slider.png" alt="Logo 7">
+
+        </div>
+      </div>
+      <div class="row"
+        style="display: flex; background-image: url(images/bg_3.jpg); background-position: center; background-size: cover; background-repeat: no-repeat; padding-bottom: 70px;">
+        <div class="col-xl-12" style="padding-top: 40px;">
+          <div class="header" style="padding-top: 40px; padding-bottom: 40px;">
+            <h3
+              style="font-size: 40px; font-weight: 900; font-family: 'Archivo', sans-serif; text-transform: uppercase; text-align: center;  color: #9c1006;">
+              FOOD FOR <span
+                style="font-size: 40px; font-weight: 30; font-family: 'Archivo', sans-serif; text-transform: uppercase; color: #9c1006;">THOUGHT</span>
+              <h3>
+          </div>
+          <div class="row">
+            <div class="col-xl-2 quotes" style="padding-bottom: 30px;">
+              <img src="images/quotes.png" width="100px" height="80px" style="float: right;" alt="">
+            </div>
+            <div class="col-xll-10">
+              <div class="scrolling-section">
+                <div class="scrolling-content">
+                  <div class="paragraph">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. A suscipit blanditiis, sed temporibus,
+                      corporis accusantium repudiandae unde accusamus mollitia dolores vel expedita quod, nesciunt
+                      officiis quidem tempora nihil facere molestias.
+                      Iure, quos cum. Harum commodi ipsam voluptates culpa velit aspernatur, facere tempore sapiente
+                      suscipit quos reiciendis alias a pariatur animi ex porro cum ipsum ea ratione laboriosam, officiis
+                      labore dolorem?
+                      Tempore expedita veritatis omnis. <b> Molestias cum iure, vero</b> odio incidunt aspernatur
+                      mollitia, excepturi ipsam alias rerum doloribus minima sit accusamus recusandae in ipsum
+                      necessitatibus repudiandae. Quia voluptate quibusdam sapiente? Consequatur?
+                      Maxime similique recusandae iure, sint saepe dolor sit aliquam quaerat nihil vel distinctio qui
+                      tempore quas! Mollitia voluptate numquam provident amet earum dolor similique, corporis nemo eum,
+                      quisquam quo magni?
+                      Quas omnis inventore mollitia possimus, consequuntur perspiciatis explicabo quam libero
+                      repellendus temporibus, at voluptatibus ab reprehenderit. Maiores, animi excepturi, unde illo
+                      vitae mollitia non vero iusto numquam esse cumque voluptates?
+                    </p>
+                  </div>
+                  <div class="paragraph">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione aliquid nostrum natus provident
+                      animi sapiente dignissimos illum soluta, architecto laborum inventore illo, reiciendis hic error,
+                      similique exercitationem odio repudiandae qui.
+                      Cupiditate itaque reprehenderit non culpa, magni adipisci modi exercitationem ex numquam, nostrum
+                      voluptatum nulla, vitae quae perferendis magnam ullam enim ad! Tempore sapiente quam quae sequi
+                      quasi aut magnam eos.
+                      Possimus, odio excepturi dicta quae, architecto suscipit distinctio inventore maxime molestias,
+                      soluta dolor! Officiis quaerat, nam suscipit nihil beatae nulla optio! Voluptas adipisci natus
+                      sequi reiciendis nostrum officiis distinctio quis.
+                      Culpa architecto ratione deserunt ex necessitatibus. Itaque, dolorum laudantium nobis eveniet
+                      vero, sit eligendi aut sunt et officiis accusantium consequuntur debitis hic odit ratione vitae
+                      dolorem aperiam nesciunt? Eveniet, quae?
+                      Debitis obcaecati a magnam. Deserunt deleniti totam doloremque enim, iusto incidunt doloribus
+                      harum fugiat, placeat animi expedita voluptatibus accusamus debitis nostrum quam numquam fuga
+                      officiis minima labore eveniet porro? Ipsum?</p>
+                  </div>
+                  <div class="paragraph">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod dignissimos voluptatibus nam
+                      blanditiis inventore enim quae, accusantium maxime odio cumque natus aliquam autem et at maiores
+                      suscipit alias officiis officia.
+                      Blanditiis cum odio <b> incidunt molestiae ratione</b> ipsum fugit quas neque recusandae rerum,
+                      accusamus expedita necessitatibus debitis amet ex doloremque nam voluptatem ea quidem rem
+                      asperiores ducimus earum. Nam, dolor ex.
+                      Fugit veritatis ut autem, corporis adipisci quisquam deleniti nesciunt et blanditiis a nobis,
+                      laborum ducimus odit dolores quos quia? Tempora atque dolorum voluptates veniam veritatis numquam,
+                      ad consectetur eveniet necessitatibus!
+                      Nihil eligendi maxime, modi deserunt <b> commodi delectus sunt.</b> Soluta magnam veniam esse ea
+                      ex voluptatum temporibus expedita architecto repellat eius sit, hic commodi quisquam laboriosam
+                      harum, eum ad molestias pariatur!
+                      Rem atque error explicabo? Debitis quas iure sapiente dolorum tempore totam vel dolor praesentium
+                      illo maiores nihil veniam, repellat quisquam ex sit laborum, numquam assumenda alias nemo. Ea,
+                      repudiandae sint!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </main>
+  <footer style="background-color: #9c1006;">
+    <div class="row footer" style="margin-left: 40px; margin-right: 40px; ">
+      <div class="col-xl-4" style=" padding-bottom: 50px;">
+
+        <div class="images" style="padding-left: 100px; padding-top: 160px;">
+          <img src="images/footer-logo.png" width="80%">
+          <img src="images/footer-logo1.png" width="80%">
+          <img src="images/seplmain.png" width="80%">
+        </div>
+        <p style="color: #a9a9a9; padding-left: 10px; padding-top: 50px;">©2023 Ingrano. Developed by <a href="link"
+            style="text-decoration: none; color: white;">Me</a>.</p>
+      </div>
+      <div class="col-xl-8" style=" padding-top: 50px; padding-left: 50px; margin-bottom: 20px; padding-bottom: 50px;">
+        <div class="email">
+          <p style="color: white;">Sign up to stay one step closer to India and be the first one to know about our
+            product launches</p>
+          <form>
+            <input type="email" placeholder="Enter Your E-mail Address"
+              style="padding-top: 6px; padding-bottom: 6px; padding-right: 500px; border: 2px solid white;">
+            <button style="color: #9c1006;
+                  background-color: white;
+                  padding: 8px 20px;
+                  cursor: pointer;
+                  border-radius: 0%;">SEND</button>
+          </form>
+          <div class="row">
+            <div class="col-xl-4">
+              <header style="color: white; padding-top: 20px; font-weight: 900;">ADDRESS</header>
+              <P style="color: white; padding-top: 40px; padding-bottom: 0px; font-size: medium;"><b>India</b></P>
+              <p style="color: white; font-size: smaller;">3rd Floor Shubhangay Exim Private limited,<br> 9th Avenue,
+                b/h Rajpath club, Bodakdev, <br> Ahmedabad, 380054</p>
+              <P style="color: white;  padding-bottom: 0px; font-size: medium;"><b>Canada</b></P>
+              <p style="color: white; font-size: smaller;">5462 Timberlea Blvd, Mississauga, <br>ON L4W 2T6</p>
+
+            </div>
+            <div class="col-xl-4">
+              <header style="color: white; padding-top: 20px; font-weight: 900;">USEFUL LINKS</header>
+              <ul style="list-style: none; text-decoration: none; padding-left: 7px; padding-top: 10px;">
+                <li><a href="index.html" style="text-decoration: none; color: white;">Home</a></li>
+                <li><a href="about.html" style="text-decoration: none; color: white;">About Us</a></li>
+                <li><a href="products.html" style="text-decoration: none; color: white;">products</a></li>
+                <li><a href="contact.html" style="text-decoration: none; color: white;">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-4">
+              <header style="color: white; padding-top: 20px; font-weight: 900;">CONTACT US</header>
+              <div class="contact">
+                <i class="fa-solid fa-phone" style="color: #ffffff; padding-top: 20px;"></i>
+                <p style="color: white; font-size: smaller; padding-left: 25px;">+1 (888) 986 0248</p>
+                <i class="fa-solid fa-envelope" style="color: #ffffff;"></i>
+                <p style="color: white; font-size: smaller; padding-left: 25px;">info@ingranoglobal.com</p>
+                <a href="https://www.facebook.com/ingranoglobal"><i class="fa-brands fa-facebook"
+                    style="color: #ffffff; padding-left: 30px;"></i></a>
+                <a href="https://www.instagram.com/ingranoglobal/"><i class="fa-brands fa-instagram"
+                    style="color: #fcfcfc; padding-left: 10px;"></i></a>
+              </div>
+            </div>
+          </div>
+          <p style="color: #a9a9a9; padding-left: 600px;">All Right Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+
+      function pauseSlider() {
+        document.querySelector('.logo-slider').style.animationPlayState = 'paused';
+      }
+
+      function resumeSlider() {
+        document.querySelector('.logo-slider').style.animationPlayState = 'running';
+      }
+
+    </script>
+  <a class="gototop" href="#"><i class="fa-solid fa-arrow-up fa-flip-horizontal"></i></a>
+</body>
+
+</html>
